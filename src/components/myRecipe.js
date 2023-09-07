@@ -13,9 +13,6 @@ const MyRecipe = () => {
     const [recipes, setRecipes] = useState([])
     const [isLoading, setIsLoading] = useState(false)
    
-    useEffect(() => {
-        
-    }, [auth])
     
     const getRecipe = useCallback(async () => {
         
@@ -29,7 +26,7 @@ const MyRecipe = () => {
                 setRecipes(newData);
                 // console.log(recipes)           
             })
-    },[user]);
+    },[auth]);
 
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
